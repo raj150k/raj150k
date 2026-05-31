@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIP Message</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(-45deg,#0f172a,#1e293b,#0f766e,#312e81);
+    background-size:400% 400%;
+    animation:bgMove 10s ease infinite;
+    overflow:hidden;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.card{
+    width:90%;
+    max-width:700px;
+    text-align:center;
+    padding:35px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(15px);
+    box-shadow:0 0 30px rgba(255,255,255,0.2);
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+}
+
+h1{
+    color:white;
+    font-size:2rem;
+    line-height:1.6;
+    margin-bottom:25px;
+    text-shadow:0 0 15px rgba(255,255,255,.5);
+}
+
+.question{
+    color:#ffd700;
+    font-size:1.4rem;
+    margin-bottom:20px;
+}
+
+.btn{
+    border:none;
+    padding:12px 28px;
+    margin:10px;
+    border-radius:50px;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.yes{
+    background:#22c55e;
+    color:white;
+}
+
+.no{
+    background:#ef4444;
+    color:white;
+}
+
+.btn:hover{
+    transform:scale(1.1);
+}
+
+#result{
+    margin-top:20px;
+    color:white;
+    font-size:24px;
+    font-weight:bold;
+    min-height:40px;
+}
+
+.follow{
+    margin-top:30px;
+    color:white;
+    font-size:18px;
+}
+
+.follow a{
+    color:#00ffff;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.follow a:hover{
+    text-decoration:underline;
+}
+
+.hearts{
+    position:absolute;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    pointer-events:none;
+}
+
+.hearts span{
+    position:absolute;
+    color:rgba(255,255,255,.3);
+    font-size:25px;
+    animation:rise 8s linear infinite;
+}
+
+@keyframes rise{
+    from{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+    to{
+        transform:translateY(-100px);
+        opacity:1;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="hearts">
+    <span style="left:10%;animation-delay:0s;">✨</span>
+    <span style="left:25%;animation-delay:2s;">💖</span>
+    <span style="left:40%;animation-delay:4s;">✨</span>
+    <span style="left:60%;animation-delay:1s;">💖</span>
+    <span style="left:80%;animation-delay:3s;">✨</span>
+</div>
+
+<div class="card">
+
+<h1>
+আপনি নিজের পায়ে দাঁড়াতে দাঁড়াতে...<br><br>
+আপনার প্রিয় মানুষ অন্যের কাঁধে পা দেওয়া শিখে যাবে...! 😅
+</h1>
+
+<div class="question">কি, রাগ করলেন? 😁</div>
+
+<button class="btn yes" onclick="showYes()">হ্যা</button>
+<button class="btn no" onclick="showNo()">না</button>
+
+<div id="result"></div>
+
+<div class="follow">
+ভালো লাগলে আইডিতে গিয়ে ফলো দিয়ে আসেন ❤️<br><br>
+
+<a href="https://www.tiktok.com/@raj150k" target="_blank">
+@raj150k
+</a>
+</div>
+
+</div>
+
+<script>
+function showYes(){
+    document.getElementById("result").innerHTML =
+    "আচ্ছা 🙂";
+}
+
+function showNo(){
+    document.getElementById("result").innerHTML =
+    "বিয়া করেন তাড়াতাড়ি 🙂";
+}
+</script>
+
+</body>
+</html>
